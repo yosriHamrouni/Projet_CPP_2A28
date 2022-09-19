@@ -10,5 +10,6 @@ int main()
     string str("srstrsdt");
 
     cout << str << endl;
+     cout << "hello world" << endl;
     return 0;
 }
