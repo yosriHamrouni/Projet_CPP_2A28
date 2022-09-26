@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+<<<<<<< HEAD
 using namesapce std;
 
 int main(){
@@ -8,4 +9,12 @@ int main(){
 cout<<hello world"<<endl;
 
 return ;
+=======
+using namespace std;
+int main(){
+
+cout<<"hello world!"<<endl;
+cout<<ateliergit/github"<<endl;
+return 0;
+>>>>>>> travelagency
 }
