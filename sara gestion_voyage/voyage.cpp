@@ -16,6 +16,7 @@
 #include <QtCharts/QLegend>
 #include <QtCharts/QBarCategoryAxis>
 #include"QSortFilterProxyModel"
+//#include "arduino.h"
 
 using namespace std;
 

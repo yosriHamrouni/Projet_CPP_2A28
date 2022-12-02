@@ -4,6 +4,7 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QVector>
+#include "arduino.h"
 
 class voyage
 {

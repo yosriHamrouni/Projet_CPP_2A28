@@ -20,13 +20,13 @@ void dialog_stat::statistiques(QVector<double>* ticks,QVector<QString> *labels)
 {
     QSqlQuery qry;
     int i=0;
-    qry.exec("SELECT ID FROM RESERVATION");
+    qry.exec("SELECT DEPART FROM VOYAGE");
     while (qry.next())
     {
-        QString ID = qry.value(0).toString();
+        QString num_voyage = qry.value(0).toString();
         i++;
         *ticks<<i;
-        *labels <<ID;
+        *labels <<num_voyage;
     }
 }
 void dialog_stat::MakeStat()
@@ -39,7 +39,7 @@ void dialog_stat::MakeStat()
     A->setAntialiased(false);
     A->setStackingGap(1);
     /***** Couleurs*****/
-    A->setName("Les Montants des reservations selon les ID");
+    A->setName("Les pays les plus visités selon depart");
     A->setPen(QPen(QColor(255, 0, 0).lighter(120)));
     A->setBrush(QColor(39, 39, 39));
     /***** Axe des abscisses *****/
@@ -63,7 +63,7 @@ void dialog_stat::MakeStat()
     /***** Axe des ordonnées *****/
     ui->plot->yAxis->setRange(0,200);
     ui->plot->yAxis->setPadding(5);
-    ui->plot->yAxis->setLabel("MONTANT");
+    ui->plot->yAxis->setLabel("DEPART");
     ui->plot->yAxis->setBasePen(QPen(Qt::black));
     ui->plot->yAxis->setTickPen(QPen(Qt::black));
     ui->plot->yAxis->setSubTickPen(QPen(Qt::black));
@@ -73,7 +73,7 @@ void dialog_stat::MakeStat()
     ui->plot->yAxis->grid()->setPen(QPen(QColor(130, 130, 130), 0, Qt::SolidLine));
     ui->plot->yAxis->grid()->setSubGridPen(QPen(QColor(130, 130, 130), 0, Qt::DotLine));
     QVector<double> PlaceData;
-    QSqlQuery q1("SELECT MONTANT FROM RESERVATION");
+    QSqlQuery q1("SELECT DEPART FROM VOYAGE");
     while (q1.next())
     {
         int  nbr_fautee = q1.value(0).toInt();
@@ -89,7 +89,4 @@ void dialog_stat::MakeStat()
     ui->plot->legend->setFont(legendFont);
     ui->plot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
 }
-void dialog_stat::on_pushButton_Fermer_clicked()
-{
-    close();
-}
+

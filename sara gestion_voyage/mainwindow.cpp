@@ -25,17 +25,37 @@
 #include <QtSvg/QSvgGenerator>
 #include <QtPrintSupport/QPrinter>
 #include <QtPrintSupport/QAbstractPrintDialog>
+#include <QtCharts>
+#include <QChartView>
+#include <QBarSet>
+#include <QBarSeries>
+#include "arduino.h"
 
-
-using namespace std;
+//int nb=0;
+//int test=0;
+//int pas=0;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     ui->le_num_voyag->setValidator( new QIntValidator(0, 9999999, this));
     ui->tab_voyageur_2->setModel(V.afficher());
+    int a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0;
+   total ( a,   b,  c,  d,  e,  f,   g,   h);
+
+   int ret=A.connect_arduino(); // lancer la connexion à arduino
+       switch(ret){
+       case(0):qDebug()<< "arduino is available and connected to : "<<A.getarduino_port_name();
+           break;
+       case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+          break;
+       case(-1):qDebug() << "arduino is not available";
+       }
+        QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_nb()));
+
 }
 
 MainWindow::~MainWindow()
@@ -244,7 +264,7 @@ void MainWindow::on_tab_voyageur_2_activated(const QModelIndex &index)
 
 
 
-void MainWindow::on_stat_button_clicked()
+/*void MainWindow::on_stat_button_clicked()
 {
              QTableView table_necessiteux,table_n2;
                  QSqlQueryModel * Mod=new  QSqlQueryModel();
@@ -352,7 +372,7 @@ void MainWindow::on_stat_button_clicked()
     }
 
 
-
+*/
 
   void MainWindow::on_qr_button_clicked()
     {
@@ -423,7 +443,7 @@ void MainWindow::on_traduire_clicked()
 
             ui->traduire->setText("translate in french");
             ui->le_ajouter->setText("Add");
-            ui->quitter_button->setText("exit");
+
 
         }
 
@@ -449,15 +469,11 @@ void MainWindow::on_traduire_clicked()
 
             ui->traduire->setText("traduire en anglais");
             ui->le_ajouter->setText("Ajouter");
-            ui->quitter_button->setText("quitter");
-
-
 
         }
-
 }
 
-void MainWindow::on_pB_Stats_clicked()
+/*void MainWindow::on_pB_Stats_clicked()
 {
     dialog_stat stats;
        stats.setModal(true);
@@ -467,3 +483,144 @@ void dialog_stat::on_pushButton_Fermer_clicked()
 {
     close();
 }
+*/
+void MainWindow::total (int a,  int b, int c, int d, int e, int f, int  g,  int h )
+{
+    QBarSet *set0 = new QBarSet ("les pays les plus visités");
+
+
+    //**
+    QSqlQuery qry;
+    qry.prepare("SELECT * FROM VOYAGE where DESTINATION=:DESTINATION");
+       qry.bindValue(":DESTINATION","france");
+    qry.exec();
+    while(qry.next())
+        a++;
+    //**
+    qry.prepare("SELECT * FROM VOYAGE where DESTINATION=:DESTINATION");
+       qry.bindValue(":DESTINATION","egypt");
+    qry.exec();
+    while(qry.next())
+        b++;
+    //**
+    qry.prepare("SELECT * FROM VOYAGE where DESTINATION=:DESTINATION");
+       qry.bindValue(":DESTINATION","frankfurt");
+    qry.exec();
+    while(qry.next())
+        c++;
+    //**
+    qry.prepare("SELECT * FROM VOYAGE where DESTINATION=:DESTINATION");
+       qry.bindValue(":DESTINATION","tunisia");
+    qry.exec();
+    while(qry.next())
+        d++;
+    //**
+    qry.prepare("SELECT * FROM VOYAGE where DESTINATION=:DESTINATION");
+       qry.bindValue(":DESTINATION","italy");
+    qry.exec();
+    while(qry.next())
+        e++;
+    //**
+    qry.prepare("SELECT * FROM ACTUALITE where DESTINATION=:DESTINATION");
+       qry.bindValue(":DESTINATION","belgique");
+    qry.exec();
+    while(qry.next())
+        f++;
+    //**
+    qry.prepare("SELECT * FROM VOYAGE where DESTINATION=:DESTINATION");
+       qry.bindValue(":DESTINATION","usa");
+    qry.exec();
+    while(qry.next())
+        g++;
+    //**
+    qry.prepare("SELECT * FROM VOYAGE where DESTINATION=:DESTINATION");
+       qry.bindValue(":DESTINATION","australia");
+    qry.exec();
+    while(qry.next())
+        h++;
+
+    *set0 << a << b << c << d << e << f << g << h;
+
+
+    QBarSeries *series = new QBarSeries();
+    series->append(set0);
+
+
+    QChart *chart = new QChart();
+    chart->addSeries(series);
+    chart->setTitle("graphique à bandes des pays les plus visités");
+    chart->setAnimationOptions(QChart::SeriesAnimations);
+    QStringList categories;
+    categories << "france" << "egypt" << "frankfurt" << "tunisia" << "italy" << "belgique"  << "usa"  << "australie";
+    QBarCategoryAxis *axis = new QBarCategoryAxis();
+    axis->append(categories);
+    chart->createDefaultAxes();
+    chart->setAxisX(axis, series);
+    QChartView *chartview = new QChartView (chart);
+
+    chartview->setParent(ui->graphe);
+
+
+}
+
+/*void MainWindow::on_ref_clicked()
+{
+
+
+            A.write_to_arduino(("0"));
+
+}
+
+void MainWindow::on_acc_clicked()
+{
+
+            A.write_to_arduino(("1"));
+
+}
+
+void MainWindow::on_verif_clicked()
+{
+
+int nbr= ui->nbr_perso->text().toInt();
+
+   if(nbr>20)
+    {
+         A.write_to_arduino(("1"));
+    }
+   else if(nbr>=20)
+    {
+         A.write_to_arduino(("0"));
+     }
+
+}
+*/
+
+void MainWindow::update_nb()
+{
+
+  data=A.read_from_arduino();
+
+  if(data== "1"){
+      ui->etat_buzzer->setText("person detected");
+  }
+  else if(data== "0"){
+      ui->etat_buzzer->setText("person not detected");
+      }
+  qDebug()<<"data"<<data;
+}
+  /* if(data == "0000"){
+      test=1;
+  }
+  if(data == "1111" && test == 1){
+      test=0;
+      pas++;
+      if(pas==2){
+          nb++;
+          pas=0;
+      }
+
+  }
+
+qDebug()<<"test"<<nb;
+qDebug()<<"data"<<data;*/
+

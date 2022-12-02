@@ -5,12 +5,13 @@
 #-------------------------------------------------
 
 QT       += core gui sql printsupport
+QT       += core gui  serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
  QT += svg
 QT       += core gui sql serialport
 QT       += serialport
-
+QT       += charts
 
 TARGET = Atelier_Connexion
 TEMPLATE = app
@@ -30,7 +31,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-    dialog_stat.cpp \
+    arduino.cpp \
         main.cpp \
         mainwindow.cpp \
     connection.cpp \
@@ -42,7 +43,7 @@ SOURCES += \
     voyage.cpp
 
 HEADERS += \
-    dialog_stat.h \
+    arduino.h \
         mainwindow.h \
     connection.h \
     qcustomplot.h \
@@ -52,7 +53,6 @@ HEADERS += \
     voyage.h
 
 FORMS += \
-        dialog_stat.ui \
         mainwindow.ui
 
 # Default rules for deployment.

@@ -131,7 +131,7 @@ background-color: rgb(21, 143, 154);</string>
       <widget class="QPushButton" name="quitter_button">
        <property name="geometry">
         <rect>
-         <x>1120</x>
+         <x>1140</x>
          <y>550</y>
          <width>21</width>
          <height>21</height>

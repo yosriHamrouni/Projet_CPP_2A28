@@ -52,13 +52,15 @@ private slots:
 
    void  on_pushButton_Fermer_clicked();
 
-
    void on_pB_Stats_clicked();
+   void total (int a,  int b, int c, int d, int e, int f, int  g,  int h );
+   void update_nb();
 
 private:
     Ui::MainWindow *ui;
      QByteArray data;
     voyage V;
+    Arduino A;
 
 
 };
