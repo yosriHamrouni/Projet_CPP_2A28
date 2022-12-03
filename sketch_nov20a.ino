@@ -10,7 +10,7 @@ void setup(){
   Serial.begin(9600);
   pinMode(ledR, OUTPUT);
   pinMode(ledV, OUTPUT);
-  pinMode(buz, INPUT);
+  pinMode(buz, OUTPUT);
   pinMode(trig, OUTPUT);
   pinMode(echo, INPUT); 
 }
@@ -30,7 +30,6 @@ void loop(){
     digitalWrite(ledV, LOW);
     digitalWrite(buz, HIGH);
     Serial.println("1");
-    delay(500);
     
   }
   else if ((dis >= 200)||(data=='0')){
@@ -39,6 +38,5 @@ void loop(){
     digitalWrite(ledR, LOW);
     digitalWrite(buz, LOW);
     Serial.println("0");
-    delay(500);
   }
 }
