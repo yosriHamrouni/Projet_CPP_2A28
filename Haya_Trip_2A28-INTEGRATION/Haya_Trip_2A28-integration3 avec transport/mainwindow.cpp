@@ -184,12 +184,10 @@ MainWindow::MainWindow(QWidget *parent) :
    //**************************************************arduino*********************
 
    int ret=A.connect_arduino();
-
        switch (ret) {
        case 0 :
            qDebug()<<"Arduino is available and connected to : "<<A.getarduino_port_name();
            break;
-
        case 1 :
            qDebug()<<"Arduino is available but not connected to : "<<A.getarduino_port_name();
            break;
@@ -199,7 +197,9 @@ MainWindow::MainWindow(QWidget *parent) :
        }
 
  //QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(concatRfid()));
- QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
+ QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_nb()));
+ //QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
+
  //QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label2()));
 
 
@@ -1104,116 +1104,6 @@ void MainWindow::on_tab_voyageur_2_activated(const QModelIndex &index)
             }
 }
 
-/*
-
-void MainWindow::on_stat_button_clicked()
-{
-             QTableView table_necessiteux,table_n2;
-                 QSqlQueryModel * Mod=new  QSqlQueryModel();
-                 QSqlQueryModel * Mod2=new  QSqlQueryModel();
-                      Connection c;
-                      QSqlQuery qry,q2;
-                      qry.prepare("select DESTINATION from VOYAGE");
-                      qry.exec();
-                      Mod->setQuery(qry);
-                      table_necessiteux.setModel(Mod);
-
-                      q2.prepare("select NUM_VOYAGE from VOYAGE group by DESTINATION");
-                      q2.exec();
-                      Mod2->setQuery(q2);
-                      table_n2.setModel(Mod2);
-
-                      //c.closeConnection();
-
-                     qDebug()<<table_necessiteux.model()->data(table_necessiteux.model()->index(0, 0)).toString().simplified();
-                     qDebug()<<table_n2.model()->data(table_n2.model()->index(0, 0)).toInt();
-
-                     const int rowCount = table_necessiteux.model()->rowCount();
-                     const int rowCount2 = table_n2.model()->rowCount();
-
-
-
-                    // set dark background gradient:
-                     QLinearGradient gradient(0, 0, 0, 400);
-                     gradient.setColorAt(0, QColor(192, 192, 192));
-                     gradient.setColorAt(0.38, QColor(192, 192, 192));
-                     gradient.setColorAt(1, QColor(70, 70, 70));
-                     ui->customplot->setBackground(QBrush(gradient));
-
-                     // create empty bar chart objects:
-                     QCPBars *besoin = new QCPBars(ui->customplot->xAxis, ui->customplot->yAxis);
-
-                     besoin->setAntialiased(false); // gives more crisp, pixel aligned bar borders
-
-                     besoin->setStackingGap(1);
-
-                     // set names and colors:
-
-                     besoin->setName("Destinations");
-                     besoin->setPen(QPen(QColor(0, 168, 140).lighter(130)));
-                 besoin->setBrush(QColor(18, 116, 161));
-                     // stack bars on top of each other:
-
-
-                     // prepare x axis with needs' labels:
-                     QVector<double> ticks;
-                     QVector<QString> labels;
-
-                     for(int i=0; i<rowCount; ++i){
-                         ticks.push_back(i);
-                         labels.push_back(table_necessiteux.model()->data(table_necessiteux.model()->index(i, 0)).toString().simplified());
-                         qDebug()<<ticks[i];
-                         qDebug()<<labels[i];
-                     }
-                     QSharedPointer<QCPAxisTickerText> textTicker(new QCPAxisTickerText);
-                     textTicker->addTicks(ticks, labels);
-                     ui->customplot->xAxis->setTicker(textTicker);
-                     ui->customplot->xAxis->setTickLabelRotation(60);
-                     ui->customplot->xAxis->setSubTicks(false);
-                     ui->customplot->xAxis->setTickLength(0, 4);
-                     ui->customplot->xAxis->setRange(0, 8);
-                     ui->customplot->xAxis->setBasePen(QPen(Qt::black));
-                     ui->customplot->xAxis->setTickPen(QPen(Qt::black));
-                     ui->customplot->xAxis->grid()->setVisible(true);
-                     ui->customplot->xAxis->grid()->setPen(QPen(QColor(130, 130, 130), 0, Qt::DotLine));
-                     ui->customplot->xAxis->setTickLabelColor(Qt::black);
-                     ui->customplot->xAxis->setLabelColor(Qt::black);
-
-                     // prepare y axis:
-                     ui->customplot->yAxis->setRange(0,50);
-                 ui->customplot->yAxis->setPadding(5); // a bit more space to the left border
-                 ui->customplot->yAxis->setBasePen(QPen(Qt::white));
-                 ui->customplot->yAxis->setTickPen(QPen(Qt::white));
-                 ui->customplot->yAxis->setSubTickPen(QPen(Qt::white));
-                 ui->customplot->yAxis->grid()->setSubGridVisible(true);
-                 ui->customplot->yAxis->setTickLabelColor(Qt::white);
-                 ui->customplot->yAxis->setLabelColor(Qt::white);
-                 ui->customplot->yAxis->grid()->setPen(QPen(QColor(130, 130, 130), 0, Qt::SolidLine));
-                 ui->customplot->yAxis->grid()->setSubGridPen(QPen(QColor(130, 130, 130), 0, Qt::DotLine));
-
-                     // Add data:
-                     QVector<double>besoinData;
-
-                     for(int i=0; i<rowCount2; ++i){
-                         besoinData.push_back(table_n2.model()->data(table_n2.model()->index(i, 0)).toInt());
-                         qDebug()<<besoinData;
-
-                     }
-                    besoin->setData(ticks, besoinData);
-
-                     // setup legend:
-                     ui->customplot->legend->setVisible(true);
-                 ui->customplot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignTop|Qt::AlignHCenter);
-                 ui->customplot->legend->setBrush(QColor(255, 255, 255, 100));
-                 ui->customplot->legend->setBorderPen(Qt::NoPen);
-                 QFont legendFont = font();
-                 legendFont.setPointSize(10);
-                 ui->customplot->legend->setFont(legendFont);
-                 ui->customplot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
-                 ui->customplot->replot();
-    }
-
-*/
 
 
   void MainWindow::on_qr_button_clicked()
@@ -1384,7 +1274,7 @@ void MainWindow::total (int a,  int b, int c, int d, int e, int f, int  g,  int 
     chart->setTitle("graphique à bandes des pays les plus visités");
     chart->setAnimationOptions(QChart::SeriesAnimations);
     QStringList categories;
-    categories << "france" << "egypt" << "frankfurt" << "tunisia" << "italy" << "belgique"  << "usa"  << "australie";
+    categories << "france" << "egypt" << "frankfurt" << "tunisia" << "italy" << "belgique"  << "usa"  << "london";
     QBarCategoryAxis *axis = new QBarCategoryAxis();
     axis->append(categories);
     chart->createDefaultAxes();
@@ -1434,10 +1324,10 @@ void MainWindow::update_nb()
   data=A.read_from_arduino();
 
   if(data== "1"){
-      ui->etat_buzzer->setText("person detected");
+      ui->etat_buzzer->setText("avion arrivée");
   }
   else if(data== "0"){
-      ui->etat_buzzer->setText("person not detected");
+      ui->etat_buzzer->setText("aucune avion arrivée");
       }
   qDebug()<<"data"<<data;
 }
@@ -1873,15 +1763,6 @@ void   MainWindow::mailSent(QString status)
     ui->msg->clear();
     ui->mail_pass->clear();
 }
-
-
-
-
-
-
-
-
-
 
 
 
