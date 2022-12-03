@@ -1,0 +1,1431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>781</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(21, 139, 151);</string>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Triangular</enum>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <property name="elideMode">
+     <enum>Qt::ElideNone</enum>
+    </property>
+    <property name="documentMode">
+     <bool>false</bool>
+    </property>
+    <property name="movable">
+     <bool>false</bool>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="dff_2">
+     <attribute name="title">
+      <string>Ajouter</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>60</y>
+        <width>321</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Ajout</string>
+      </property>
+      <widget class="QLineEdit" name="capacite">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>160</y>
+         <width>113</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_14">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+
+</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Tw Cen MT Condensed Extra Bold'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Nom&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_8">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>200</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Tw Cen MT Condensed Extra Bold'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Type &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_21">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>120</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Tw Cen MT Condensed Extra Bold'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Etat&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_9">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>80</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Tw Cen MT Condensed Extra Bold'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Matricule&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_22">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>160</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Tw Cen MT Condensed Extra Bold'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Capacite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="etat">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>119</y>
+         <width>113</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="mat">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>80</y>
+         <width>113</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="type">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>200</y>
+         <width>113</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="le_nom">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>39</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>250</y>
+         <width>91</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+       <property name="text">
+        <string>Ajouter </string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../33/add.png</normaloff>../../../../../33/add.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string> Modifier/Spprimmer</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_7">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>20</y>
+        <width>331</width>
+        <height>271</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Modification</string>
+      </property>
+      <widget class="QTextBrowser" name="textBrowser_17">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Tw Cen MT Condensed Extra Bold'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Nom&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="le_nom_2">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>30</y>
+         <width>101</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Tw Cen MT Condensed Extra Bold'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Matricule&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="mat_2">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>70</y>
+         <width>101</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_18">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Tw Cen MT Condensed Extra Bold'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Etat&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="etat_2">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>110</y>
+         <width>101</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_19">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>150</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Tw Cen MT Condensed Extra Bold'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Capacite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="capacite_2">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>150</y>
+         <width>101</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser_20">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>190</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Tw Cen MT Condensed Extra Bold&quot;;</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Tw Cen MT Condensed Extra Bold'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Type &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="type_2">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>190</y>
+         <width>101</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pb_supprimer_2">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>230</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+
+</string>
+       </property>
+       <property name="text">
+        <string>Modifier</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../33/modifier.png</normaloff>../../../../../33/modifier.png</iconset>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>300</y>
+        <width>181</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Suppression</string>
+      </property>
+      <widget class="QLineEdit" name="matsup">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>50</y>
+         <width>113</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pb_supprimer">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>90</y>
+         <width>81</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../33/delete.png</normaloff>../../../../../33/delete.png</iconset>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_6">
+     <attribute name="title">
+      <string>Afficher </string>
+     </attribute>
+     <widget class="QTableView" name="tab_abo">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>100</y>
+        <width>611</width>
+        <height>211</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="recher">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>340</y>
+        <width>75</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+      </property>
+      <property name="text">
+       <string>Search</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../../../33/search.png</normaloff>../../../../../33/search.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>340</y>
+        <width>113</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>Recherche</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_10">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>330</y>
+        <width>181</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>PDF </string>
+      </property>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>50</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+       </property>
+       <property name="text">
+        <string>PDF</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../../../33/pdf.png</normaloff>../../../../../33/pdf.png</iconset>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="trier_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+      </property>
+      <property name="text">
+       <string>Trier</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../../../33/sort.png</normaloff>../../../../../33/sort.png</iconset>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="fontComboBox">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>10</y>
+        <width>62</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>nom</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>mat</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="croissant">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>70</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Croissannt</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="decroissant">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>70</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Decroissant</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_7">
+     <attribute name="title">
+      <string>Mailing</string>
+     </attribute>
+     <widget class="QLineEdit" name="rcpt">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>79</y>
+        <width>351</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>Destinataire</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="subject">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>130</y>
+        <width>371</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>Objet</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="mail_pass">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>80</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>Mot de passe</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="file">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>170</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>Fichier</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="msg">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>220</y>
+        <width>391</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>                                         ECRIRE UN MSG</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="browseBtn">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>170</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+      </property>
+      <property name="text">
+       <string>parcourir</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../../../33/mbribrowse_99605.png</normaloff>../../../../../33/mbribrowse_99605.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="sendBtn">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>410</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #b1b1b1;
+color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);
+
+ 
+
+    border-width: 3px;
+
+    border-color: #ffffff;
+
+    border-style: solid;
+
+    border-radius: 10;
+
+
+
+    padding: 3px;
+
+    font-size: 12px;
+
+    padding-left: 5px;
+
+    padding-right: 5px;
+</string>
+      </property>
+      <property name="text">
+       <string>Envoyer</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../../../33/send.png</normaloff>../../../../../33/send.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_8">
+     <attribute name="title">
+      <string>MAP</string>
+     </attribute>
+     <widget class="QAxWidget" name="webbrowser_2">
+      <property name="geometry" stdset="0">
+       <rect>
+        <x>59</x>
+        <y>49</y>
+        <width>581</width>
+        <height>371</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QAxWidget</class>
+   <extends>QWidget</extends>
+   <header>qaxwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
